@@ -107,6 +107,70 @@ const zoneTitle = document.getElementById("zoneTitle");
 const zoneText = document.getElementById("zoneText");
 const zoneCarousel = document.getElementById("zoneCarousel");
 
+/* ========================= */
+/* CAROUSEL ARROWS            */
+/* ========================= */
+
+const carouselPrev = document.getElementById("carouselPrev");
+const carouselNext = document.getElementById("carouselNext");
+
+function updateCarouselArrows() {
+  if (!zoneCarousel || !carouselPrev || !carouselNext) return;
+
+  const scrollLeft = zoneCarousel.scrollLeft;
+  const maxScroll = zoneCarousel.scrollWidth - zoneCarousel.clientWidth;
+
+  if (maxScroll <= 4) {
+    carouselPrev.classList.remove("visible");
+    carouselNext.classList.remove("visible");
+    return;
+  }
+
+  if (scrollLeft > 8) {
+    carouselPrev.classList.add("visible");
+  } else {
+    carouselPrev.classList.remove("visible");
+  }
+
+  if (scrollLeft < maxScroll - 8) {
+    carouselNext.classList.add("visible");
+  } else {
+    carouselNext.classList.remove("visible");
+  }
+}
+
+function scrollCarousel(direction) {
+  if (!zoneCarousel) return;
+
+  const card = zoneCarousel.querySelector(".zone-photo");
+  const scrollAmount = card ? card.offsetWidth + 14 : 300;
+
+  zoneCarousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
+}
+
+if (carouselPrev) {
+  carouselPrev.addEventListener("click", () => scrollCarousel(-1));
+}
+
+if (carouselNext) {
+  carouselNext.addEventListener("click", () => scrollCarousel(1));
+}
+
+if (zoneCarousel) {
+  zoneCarousel.addEventListener("scroll", updateCarouselArrows, { passive: true });
+
+  new ResizeObserver(() => {
+    updateCarouselArrows();
+  }).observe(zoneCarousel);
+}
+
+/* ========================= */
+/* ZONE TABS                  */
+/* ========================= */
+
 function renderZone(zoneKey) {
   const zone = zoneData[zoneKey];
 
@@ -134,7 +198,11 @@ function renderZone(zoneKey) {
 
   zoneCarousel.scrollTo({
     left: 0,
-    behavior: "smooth",
+    behavior: "instant",
+  });
+
+  requestAnimationFrame(() => {
+    updateCarouselArrows();
   });
 }
 
@@ -162,6 +230,10 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+
+/* ========================= */
+/* IMAGE LIGHTBOX             */
+/* ========================= */
 
 const imageLightbox = document.getElementById("imageLightbox");
 const imageLightboxImg = document.getElementById("imageLightboxImg");
@@ -282,3 +354,64 @@ document.addEventListener("keydown", (event) => {
     changeLightboxImage(1);
   }
 });
+
+/* ========================= */
+/* SCROLL REVEAL ANIMATIONS   */
+/* ========================= */
+
+(function initScrollReveal() {
+  const revealSections = document.querySelectorAll(".reveal");
+  const revealItems = document.querySelectorAll(".reveal-item");
+
+  if (!revealSections.length && !revealItems.length) return;
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: "0px 0px -60px 0px",
+    }
+  );
+
+  revealSections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+
+  const itemObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const parent = entry.target.closest(".cards, .program-list, .gallery-grid");
+          if (parent) {
+            const siblings = parent.querySelectorAll(".reveal-item");
+            siblings.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("revealed");
+              }, index * 120);
+            });
+
+            siblings.forEach((item) => itemObserver.unobserve(item));
+          } else {
+            entry.target.classList.add("revealed");
+            itemObserver.unobserve(entry.target);
+          }
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -40px 0px",
+    }
+  );
+
+  revealItems.forEach((item) => {
+    itemObserver.observe(item);
+  });
+})();
