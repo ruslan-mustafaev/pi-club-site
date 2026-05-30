@@ -1,0 +1,12 @@
+{
+  "name": "pi-club-site",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite pi-club-site --port 5173 --host",
+    "build": "vite build pi-club-site",
+    "preview": "vite preview pi-club-site"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
