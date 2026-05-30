@@ -1229,6 +1229,76 @@ h1 .hero-title-accent {
   font-size: 13px !important;
 }
 
+/* CONTACT PHONE */
+
+.contact-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 16px 24px;
+  border: 1px solid rgba(229, 9, 20, 0.28);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(229, 9, 20, 0.1), transparent 14rem),
+    rgba(255, 255, 255, 0.035);
+  text-decoration: none;
+  transition: 0.22s ease;
+  cursor: pointer;
+}
+
+.contact-phone:hover {
+  border-color: rgba(229, 9, 20, 0.6);
+  background:
+    radial-gradient(circle at 0% 50%, rgba(229, 9, 20, 0.18), transparent 14rem),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 28px rgba(229, 9, 20, 0.14);
+  transform: translateY(-2px);
+}
+
+.contact-phone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--red);
+  color: white;
+  box-shadow: 0 0 20px var(--red-soft);
+}
+
+.contact-phone-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-phone-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.contact-phone-number {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.contact-phone > span:last-of-type {
+  display: flex;
+  flex-direction: column;
+}
+
 /* FOOTER */
 
 .site-footer {
