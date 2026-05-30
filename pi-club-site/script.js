@@ -415,3 +415,27 @@ document.addEventListener("keydown", (event) => {
     itemObserver.observe(item);
   });
 })();
+
+/* ========================= */
+/* FLIP CARDS — TAP ON TOUCH  */
+/* ========================= */
+
+(function initFlipCards() {
+  const isTouchDevice = window.matchMedia("(hover: none)").matches;
+
+  if (!isTouchDevice) return;
+
+  const flipCards = document.querySelectorAll(".flip-card");
+
+  flipCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      flipCards.forEach((other) => {
+        if (other !== card) other.classList.remove("flipped");
+      });
+
+      card.classList.toggle("flipped");
+    });
+  });
+})();
