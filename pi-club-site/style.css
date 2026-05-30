@@ -191,17 +191,6 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 22% 42%, rgba(229, 9, 20, 0.25), transparent 30rem),
-    radial-gradient(circle at 78% 30%, rgba(216, 180, 106, 0.10), transparent 26rem),
-    linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.05) 46%, transparent 54%);
-  opacity: 0.9;
-}
-
-.hero-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
     radial-gradient(circle at 22% 42%, rgba(229, 9, 20, 0.22), transparent 30rem),
     radial-gradient(circle at 78% 30%, rgba(216, 180, 106, 0.10), transparent 26rem),
     linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.045) 46%, transparent 54%);
@@ -694,6 +683,61 @@ h1 .hero-title-accent {
   font-size: 17px;
 }
 
+/* ZONE CAROUSEL WITH ARROWS */
+
+.zone-carousel-wrapper {
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.22s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zone-carousel-wrapper:hover .carousel-arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-arrow.visible {
+  opacity: 0.6;
+  pointer-events: auto;
+}
+
+.carousel-arrow:hover {
+  background: rgba(229, 9, 20, 0.85);
+  border-color: var(--red);
+  box-shadow: 0 0 24px var(--red-soft);
+  opacity: 1 !important;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow-prev {
+  left: 12px;
+}
+
+.carousel-arrow-next {
+  right: 12px;
+}
+
 .zone-carousel {
   display: grid;
   grid-auto-flow: column;
@@ -703,6 +747,7 @@ h1 .hero-title-accent {
   overflow-y: hidden;
   padding-bottom: 12px;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(229, 9, 20, 0.65) rgba(255,255,255,0.08);
 }
@@ -1261,6 +1306,64 @@ body.lightbox-open {
   }
 }
 
+/* ========================= */
+/* SCROLL REVEAL ANIMATIONS  */
+/* ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance animation */
+.hero .eyebrow {
+  animation: heroFadeUp 0.7s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero h1 {
+  animation: heroFadeUp 0.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-text {
+  animation: heroFadeUp 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-actions {
+  animation: heroFadeUp 0.7s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-info {
+  animation: heroFadeUp 0.7s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
@@ -1428,6 +1531,20 @@ body.lightbox-open {
 
   .zone-carousel {
     grid-auto-columns: 88%;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .carousel-arrow-prev {
+    left: 8px;
+  }
+
+  .carousel-arrow-next {
+    right: 8px;
   }
 
   .image-lightbox {
