@@ -42,11 +42,11 @@ const zoneData = {
     title: "Billiard Lounge",
     text: "Komfortná billiard lounge zóna s tlmeným osvetlením, príjemnou hudbou, prémiovým barom a atmosférou pre oddych počas týždňa.",
     images: [
-      { src: "assets/img/biliard/b0.jpg", label: "Billiard Lounge" },
-      { src: "assets/img/biliard/b1.jpg", label: "Billiard Lounge" },
-      { src: "assets/img/biliard/b2.jpg", label: "Billiard Lounge" },
-      { src: "assets/img/biliard/b3.jpg", label: "Billiard Lounge" },
-      { src: "assets/img/biliard/b4.jpg", label: "Billiard Lounge" },
+      { src: "/assets/img/biliard/b0.jpg", label: "Billiard Lounge" },
+      { src: "/assets/img/biliard/b1.jpg", label: "Billiard Lounge" },
+      { src: "/assets/img/biliard/b2.jpg", label: "Billiard Lounge" },
+      { src: "/assets/img/biliard/b3.jpg", label: "Billiard Lounge" },
+      { src: "/assets/img/biliard/b4.jpg", label: "Billiard Lounge" },
     ],
   },
 
@@ -55,7 +55,7 @@ const zoneData = {
     title: "Signature Bar",
     text: "Dizajnový bar s prémiovou atmosférou, signature drinkami a priestorom pre štart večera pred klubovou nocou.",
     images: [
-      { src: "assets/img/bar/bar0.jpg", label: "Premium Bar" },
+      { src: "/assets/img/bar/bar0.jpg", label: "Premium Bar" },
     ],
   },
 
@@ -64,8 +64,8 @@ const zoneData = {
     title: "VIP Karaoke 1",
     text: "Súkromná karaoke zóna pre spev, oslavy, menšie skupiny a VIP večery s vlastnou atmosférou.",
     images: [
-      { src: "assets/img/vip_karaoke_1/k0.jpg", label: "VIP Karaoke 1" },
-      { src: "assets/img/vip_karaoke_1/k2.jpg", label: "VIP Karaoke 1" },
+      { src: "/assets/img/vip_karaoke_1/k0.jpg", label: "VIP Karaoke 1" },
+      { src: "/assets/img/vip_karaoke_1/k2.jpg", label: "VIP Karaoke 1" },
     ],
   },
 
@@ -74,8 +74,8 @@ const zoneData = {
     title: "VIP Karaoke 2",
     text: "Druhá karaoke zóna pre skupiny hostí, súkromné rezervácie, oslavy a večerný program.",
     images: [
-      { src: "assets/img/vip_karaoke_2/k2_1.jpg", label: "VIP Karaoke 2" },
-      { src: "assets/img/vip_karaoke_2/k2_2.jpg", label: "VIP Karaoke 2" },
+      { src: "/assets/img/vip_karaoke_2/k2_1.jpg", label: "VIP Karaoke 2" },
+      { src: "/assets/img/vip_karaoke_2/k2_2.jpg", label: "VIP Karaoke 2" },
     ],
   },
 
@@ -84,18 +84,18 @@ const zoneData = {
     title: "Dance Floor",
     text: "Energetická klubová zóna pre piatkové a sobotné noci, DJ program, svetelnú show a tanečný parket.",
     images: [
-      { src: "assets/img/disco_zone/d1.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d2.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d3.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d4.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d5.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d6.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d7.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d8.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d9.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d10.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d11.jpg", label: "Dance & Night" },
-      { src: "assets/img/disco_zone/d12.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d1.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d2.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d3.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d4.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d5.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d6.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d7.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d8.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d9.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d10.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d11.jpg", label: "Dance & Night" },
+      { src: "/assets/img/disco_zone/d12.jpg", label: "Dance & Night" },
     ],
   },
 };
