@@ -74,6 +74,7 @@ const zoneData = {
     images: [
       { src: "/d9.jpg", label: "VIP Karaoke 2" },
       { src: "/d10.jpg", label: "VIP Karaoke 2" },
+      { src: "/d11.jpg", label: "VIP Karaoke 2" },
     ],
   },
 
