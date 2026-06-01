@@ -72,7 +72,8 @@ const zoneData = {
     title: "VIP Karaoke 2",
     text: "Druhá karaoke zóna pre skupiny hostí, súkromné rezervácie, oslavy a večerný program.",
     images: [
-      { src: "/karaoke.jpg", label: "VIP Karaoke 2" },
+      { src: "/d9.jpg", label: "VIP Karaoke 2" },
+      { src: "/d10.jpg", label: "VIP Karaoke 2" },
     ],
   },
 
