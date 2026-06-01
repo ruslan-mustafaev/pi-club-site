@@ -54,7 +54,6 @@ const zoneData = {
     text: "Dizajnový bar s prémiovou atmosférou, signature drinkami a priestorom pre štart večera pred klubovou nocou.",
     images: [
       { src: "/bar.jpg", label: "Premium Bar" },
-      { src: "/bar-C-ZyiAkD.jpg", label: "Premium Bar" },
     ],
   },
 
