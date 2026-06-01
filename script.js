@@ -42,9 +42,9 @@ const zoneData = {
     title: "Billiard Lounge",
     text: "Komfortná billiard lounge zóna s tlmeným osvetlením, príjemnou hudbou, prémiovým barom a atmosférou pre oddych počas týždňa.",
     images: [
-      { src: "/billiard.jpg", label: "Billiard Lounge" },
-      { src: "/billiard-uNajkgG4.jpg", label: "Billiard Lounge" },
-      { src: "/b1-TSW9RQO3.jpg", label: "Billiard Lounge" },
+      { src: "/b0.jpg", label: "Billiard Lounge" },
+      { src: "/b3.jpg", label: "Billiard Lounge" },
+      { src: "/b4.jpg", label: "Billiard Lounge" },
     ],
   },
 
