@@ -62,7 +62,6 @@ const zoneData = {
     title: "VIP Karaoke 1",
     text: "Súkromná karaoke zóna pre spev, oslavy, menšie skupiny a VIP večery s vlastnou atmosférou.",
     images: [
-      { src: "/k0.jpg", label: "VIP Karaoke 1" },
       { src: "/k0-hvGDKtSf.jpg", label: "VIP Karaoke 1" },
       { src: "/k2.jpg", label: "VIP Karaoke 1" },
     ],
