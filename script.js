@@ -82,11 +82,11 @@ const zoneData = {
     title: "Dance Floor",
     text: "Energetická klubová zóna pre piatkové a sobotné noci, DJ program, svetelnú show a tanečný parket.",
     images: [
-      { src: "/led.jpg", label: "Dance & Night" },
-      { src: "/led-DAqHPzlF.jpg", label: "Dance & Night" },
-      { src: "/d3-dL6iKa3O.jpg", label: "Dance & Night" },
-      { src: "/stairs.jpg", label: "Dance & Night" },
-      { src: "/stairs-D5vmLmKd.jpg", label: "Dance & Night" },
+      { src: "/d1.jpg", label: "Dance & Night" },
+      { src: "/d3.jpg", label: "Dance & Night" },
+      { src: "/d4.jpg", label: "Dance & Night" },
+      { src: "/d5.jpg", label: "Dance & Night" },
+      { src: "/d6.jpg", label: "Dance & Night" },
     ],
   },
 };
