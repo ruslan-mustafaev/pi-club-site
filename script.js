@@ -270,7 +270,12 @@ let currentLightboxIndex = 0;
 function getLightboxImages(clickedImage) {
   const zoneCarousel = clickedImage.closest(".zone-carousel");
   const galleryGrid = clickedImage.closest(".gallery-grid");
-  const scope = zoneCarousel || galleryGrid || document;
+  const offersBanners = clickedImage.closest(".offers-banners");
+  const scope = zoneCarousel || galleryGrid || offersBanners || document;
+
+  if (offersBanners) {
+    return Array.from(offersBanners.querySelectorAll("img"));
+  }
 
   return Array.from(scope.querySelectorAll(".zone-photo img, .gallery-card img"));
 }
@@ -325,6 +330,13 @@ function changeLightboxImage(direction) {
 }
 
 document.addEventListener("click", (event) => {
+  const bannerImg = event.target.closest(".offers-banners img");
+  if (bannerImg) {
+    event.preventDefault();
+    openImageLightbox(bannerImg);
+    return;
+  }
+
   const clickedCard = event.target.closest(".zone-photo, .gallery-card");
 
   if (!clickedCard) return;
