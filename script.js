@@ -42,11 +42,11 @@ const zoneData = {
     title: "Billiard Lounge",
     text: "Komfortná billiard lounge zóna s tlmeným osvetlením, príjemnou hudbou, prémiovým barom a atmosférou pre oddych počas týždňa.",
     images: [
-      { src: "/b0.jpg", label: "Billiard Lounge" },
-      { src: "/b2.jpg", label: "Billiard Lounge" },
-      { src: "/b3.jpg", label: "Billiard Lounge" },
-      { src: "/b4.jpg", label: "Billiard Lounge" },
+      { src: "/billiards/139ae7cf-fbd8-4446-90bf-4b7a2e645650.jpg", label: "Billiard Lounge" },
+      { src: "/billiards/16244a08-fae4-4a80-92b3-cf040f628544.jpg", label: "Billiard Lounge" },
+      { src: "/billiards/fca61e42-8940-47e9-b1da-73ff3350f636.jpg", label: "Billiard Lounge" },
     ],
+    video: "/billiards/2.mp4",
   },
 
   bar: {
@@ -54,7 +54,26 @@ const zoneData = {
     title: "Signature Bar",
     text: "Dizajnový bar s prémiovou atmosférou, signature drinkami a priestorom pre štart večera pred klubovou nocou.",
     images: [
-      { src: "/bar.jpg", label: "Premium Bar" },
+      { src: "/bar2/464bfe1b-7e0d-4f65-8fcf-61b103cbab7c.jpg", label: "Premium Bar" },
+      { src: "/bar2/79553374-2d6e-418d-b2b0-461b4303b919.jpg", label: "Premium Bar" },
+      { src: "/bar2/a262620f-1e41-46b2-bf4d-45b38f8db89c.jpg", label: "Premium Bar" },
+      { src: "/bar2/ffdbbb0b-2a6b-4d8b-9058-c7584fa1a9be.jpg", label: "Premium Bar" },
+    ],
+  },
+
+  cocktails: {
+    kicker: "Cocktails",
+    title: "Signature Cocktails",
+    text: "Autorské koktaily miešané šikovnými barmanmi z prémiovych destilátov, čerstvých ingrediencií a vlastných receptúr. Každý drink je malé umelecké dielo.",
+    images: [
+      { src: "/cocktails/218aeda6-0565-4b44-9f13-807f41bfa8bc.jpg", label: "Cocktail" },
+      { src: "/cocktails/274d9098-58fd-48fb-a693-45698c27b731_(1).jpg", label: "Cocktail" },
+      { src: "/cocktails/561b68f1-4d74-4e3c-afac-76d79d023d68.jpg", label: "Cocktail" },
+      { src: "/cocktails/7167f871-21d8-47a7-89c3-b423025d394a.jpg", label: "Cocktail" },
+      { src: "/cocktails/861a9490-2599-4ac9-99eb-d0d76e264da3_(1).jpg", label: "Cocktail" },
+      { src: "/cocktails/93e4b89c-ba32-4aa1-985c-1cd8377babfb.jpg", label: "Cocktail" },
+      { src: "/cocktails/b083a85c-c64c-4640-be8f-c6f5d724cc6f.jpg", label: "Cocktail" },
+      { src: "/cocktails/ced070a1-88d0-47c9-b600-750197b1ac6f.jpg", label: "Cocktail" },
     ],
   },
 
@@ -173,9 +192,19 @@ function renderZone(zoneKey) {
   zoneTitle.textContent = zone.title;
   zoneText.textContent = zone.text;
 
-  zoneCarousel.innerHTML = zone.images
-    .map(
-      (image) => `
+  const videoHtml = zone.video
+    ? `<article class="zone-photo zone-photo-video">
+        <video autoplay muted loop playsinline>
+          <source src="${zone.video}" type="video/mp4" />
+        </video>
+       </article>`
+    : "";
+
+  zoneCarousel.innerHTML =
+    videoHtml +
+    zone.images
+      .map(
+        (image) => `
         <article class="zone-photo">
           <img
             src="${image.src}"
@@ -186,8 +215,8 @@ function renderZone(zoneKey) {
           />
         </article>
       `
-    )
-    .join("");
+      )
+      .join("");
 
   zoneCarousel.scrollTo({
     left: 0,
