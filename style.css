@@ -703,7 +703,7 @@ h1 .hero-title-accent {
 
 .offers-banners {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 14px;
   margin-bottom: 32px;
 }
@@ -736,7 +736,14 @@ h1 .hero-title-accent {
   border-radius: 22px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+  .offers-banners {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
   .offers-banners {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
