@@ -701,9 +701,10 @@ h1 .hero-title-accent {
   color: var(--gold);
 }
 
+/* Banners grid: 3 per row on desktop */
 .offers-banners {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-bottom: 32px;
 }
@@ -734,20 +735,6 @@ h1 .hero-title-accent {
   height: 100%;
   object-fit: cover;
   border-radius: 22px;
-}
-
-@media (max-width: 900px) {
-  .offers-banners {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-}
-
-@media (max-width: 500px) {
-  .offers-banners {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
 }
 
 /* GALLERY */
@@ -1047,7 +1034,6 @@ h1 .hero-title-accent {
   border-top: 1px solid var(--line);
 }
 
-
 .contact-layout {
   max-width: 920px;
 }
@@ -1077,7 +1063,6 @@ h1 .hero-title-accent {
   margin-inline: auto;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 
 .contact-lines {
   margin-top: 32px;
@@ -1671,7 +1656,8 @@ body.lightbox-open {
   .desktop-nav {
     display: none;
   }
-.menu-btn {
+
+  .menu-btn {
     display: block;
   }
 
@@ -1710,7 +1696,7 @@ body.lightbox-open {
     grid-row: auto;
   }
 
-    .zone-showcase {
+  .zone-showcase {
     grid-template-columns: 1fr;
   }
 
@@ -1720,6 +1706,12 @@ body.lightbox-open {
 
   .zone-carousel {
     grid-auto-columns: minmax(260px, 82%);
+  }
+
+  /* Banners: still 3 columns on tablet */
+  .offers-banners {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 }
 
@@ -1894,6 +1886,12 @@ body.lightbox-open {
 
   .image-lightbox-next {
     right: 12px;
+  }
+
+  /* Banners: 2 columns on mobile */
+  .offers-banners {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 }
 
